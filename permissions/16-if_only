@@ -1,2 +1,2 @@
 #!/bin/bash
-if [ '$fileowner' = 'vincent' ] then sudo chown guillaume hello  
+sudo chown vincent hello  

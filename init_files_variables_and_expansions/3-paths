@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "$PATH" | tr ':' '\n' | grep -c '/usr/'
+echo "$PATH" | tr ':' '\n' | grep -c '/usr/|/bin/|/sbin/'

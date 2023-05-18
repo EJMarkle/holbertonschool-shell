@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $PATH | tr -o ":/" | w
+echo "$PATH" | tr ':' '\n' | grep -c '/usr/'

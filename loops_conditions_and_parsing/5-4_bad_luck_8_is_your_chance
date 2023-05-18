@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# displays Best School 10 times, displays bad luck on 4th iterartion and good luck on 8th iteration
+counter=1
+while [$counter -el 10 ]
+	if [$counter -eq 4]
+		echo 'bad luck
+	if [$counter -eq 8]
+		echo 'good luck'
+	elif [$counter -el 10]
+		echo 'Best School'
+	fi
+done

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # print Best School 10 times, print Hi on the 9th
 counter=1
-while [ $counter -el 10 ]
+while [ $counter -le 10 ]
 do
   echo "Best School"
   ((counter++))
@@ -9,7 +9,7 @@ do
 	 $counter=9
 	then
 	 echo 'Best School'
-	\nl 
+	\n 
 	echo 'Hi'
 	fi
 done

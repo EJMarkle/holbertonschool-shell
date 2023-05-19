@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Clocks!
 
-hour=1
+hour=0
 counter=1
 
 while [ $hour -le 12 ]

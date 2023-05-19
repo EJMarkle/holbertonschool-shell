@@ -2,7 +2,7 @@
 # Clocks!
 
 hour=0
-counter=1
+counter=0
 
 while [ $hour -le 12 ]
 do

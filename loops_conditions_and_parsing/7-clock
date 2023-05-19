@@ -4,7 +4,7 @@
 hour=1
 counter=1
 
-while [ $counter -le 59 ]
+while [ $hour -le 12 ]
 do
   echo $counter
   counter=$((counter + 1))
@@ -14,5 +14,10 @@ do
     echo "Hour: $hour"
     hour=$((hour + 1))
     counter=1
+
+    if [ $hour -eq 13 ]
+    then
+      break
+    fi
   fi
 done

@@ -1,15 +1,27 @@
 #!/usr/bin/env bash
-# Superstitious numbers!!
+# Superstitious numbers!
+
 i=1
+
 while [ $i -le 20 ]
-	if [ $i -e 4 ]; then
-	do 
-		echo \n 'bad luck from China'
-	elif [ $i -e 9 ]; then
-	do 
-		echo \n 'bad luck from Japan'
-	elif [ $i -e 17 ]; then
-	do 
-		echo \n 'bad luck from Italy'
-	fi
+do
+  case $i in
+    4)
+      echo "4"
+      echo "bad luck from China"
+      ;;
+    9)
+      echo "9"
+      echo "bad luck from Japan"
+      ;;
+    17)
+      echo "17"
+      echo "bad luck from Italy"
+      ;;
+    *)
+      echo $i
+      ;;
+  esac
+
+  i=$((i + 1))
 done

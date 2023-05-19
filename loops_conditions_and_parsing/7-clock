@@ -1,23 +1,23 @@
 #!/usr/bin/env bash
 # Clocks!
 
-hour=0
-counter=0
+h=0
+m=1
 
-while [ $hour -le 12 ]
+echo "Hour: $h"
+
+while [ $h -le 12 ]
 do
-  echo $counter
-  counter=$((counter + 1))
-
-  if [ $counter -eq 60 ]
-  then
-    echo "Hour: $hour"
-    hour=$((hour + 1))
-    counter=1
-
-    if [ $hour -eq 13 ]
-    then
-      break
-    fi
-  fi
+	echo $m 
+	m=$((m + 1))
+if [ $m -eq 60 ]
+then 
+	h=$((h + 1))
+	echo "Hour: $h"
+	m=1
+if [ $h -eq 13 ]
+then
+	break
+fi
+fi
 done

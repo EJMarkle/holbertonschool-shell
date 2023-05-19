@@ -1,14 +1,18 @@
 #!/usr/bin/env bash
 # Clocks!
 
-hour=0
-while [ $hour -le 12 ]
+hour=1
+counter=1
+
+while [ $counter -le 59 ]
 do
-	minute=1
-	while [ $minute -le 59 ]
-	do 
-		echo "$hour:$minute"
-		minute=$((minute + 1))
-	done
-hour=$((hour + 1))
+  echo $counter
+  counter=$((counter + 1))
+
+  if [ $counter -eq 60 ]
+  then
+    echo "Hour: $hour"
+    hour=$((hour + 1))
+    counter=1
+  fi
 done

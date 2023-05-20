@@ -17,6 +17,6 @@ do
 		then
 			echo "Hour: $h"
 		fi
-		m=0
+	m=1	
 fi
 done

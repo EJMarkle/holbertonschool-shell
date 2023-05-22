@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # kills highlander :(
 
-pid=$(pgrep "7-highlander")
+pid=$(pgrep -f "7-highlander")
 kill "$pid"

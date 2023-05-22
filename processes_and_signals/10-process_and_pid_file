@@ -8,3 +8,8 @@ while true
 do
 	echo 'To infinity and beyond'
 done
+trap SIGQUIT SIGTERM
+while true 
+do 
+	rm -r /var/run/myscript.pid
+done

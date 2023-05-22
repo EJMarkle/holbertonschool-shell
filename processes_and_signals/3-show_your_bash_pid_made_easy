@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 # Show PID witout ps?? Is that legal??
 
-ls -l /proc/*/exe | grep bash
+processes=$(ls -l /proc/*/exe 2>/dev/null | grep bash)
+
+echo "$processes" | awk -F'/' '{print "[" $(NF-1) "]" " " $(NF)}'

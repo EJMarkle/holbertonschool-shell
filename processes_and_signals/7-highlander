@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 # highlander...there can only be one
 
-trap 'echo "I am invincible!!!"
-exit' SIGTERM
+trap 'echo "I am invincible!!!'  SIGTERM
 
 while true
 do

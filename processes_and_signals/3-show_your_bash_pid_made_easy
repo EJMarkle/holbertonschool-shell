@@ -1,10 +1,7 @@
 #!/usr/bin/env bash
 # Show PID witout ps?? Is that legal??
 
-for pid in /proc/*/; do
-    pid=${pid%*/}
-    process_name=$(cat "$pid/comm" 2>/dev/null)
-    if [[ $process_name == *"bash"* ]]; then
-        echo "PID: $pid, Process Name: $process_name"
-    fi
+for i in 'ls -l /proc/ | egrep "([0-9]+)"'
+do 
+	echo "$i:[`cat /proc/$i/comm`] `cat /proc/$i/cmdline`"
 done

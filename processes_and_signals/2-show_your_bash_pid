@@ -2,4 +2,4 @@
 # PID of bash processes
 shellcheck disable=SC2009
 
-ps awxf | grep bash | awk '{print $2}'
+ps awxf | grep bash

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Buzz Forever
+
+i=1
+for i in { 1 .. }
+do 
+	echo 'To infinity and beyond'
+	sleep 2
+done

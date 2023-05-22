@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
 # Show PID witout ps?? Is that legal??
 
-for i in 'ls -l /proc/ | egrep "([0-9]+)"'
-do 
-	echo "$i:[`cat /proc/$i/comm`] `cat /proc/$i/cmdline`"
-done
+pgrep bash -l 

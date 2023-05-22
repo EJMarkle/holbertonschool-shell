@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
 # terminate Mr. Buzz
 
-ex="4-to_infinity_and_beyond"
-pid=$(pgrep 'ex')
-
-kill "pid"
+pkill 4-to_infinity_and_beyond

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# hmm many things are happening here yes
+
+echo $$ > /var/run/myscript.pid
+trap 'echo "I hate the kill command"' SIGTERM
+do
+	echo 'To infinity and beyond'
+done

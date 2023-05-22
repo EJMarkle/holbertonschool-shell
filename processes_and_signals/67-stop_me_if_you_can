@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# stop w/o kill!!!
+
+pcs="7-highlander"
+pid="$(pgrep "$pcs")"
+
+pkill "$pid"

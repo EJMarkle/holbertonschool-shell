@@ -2,14 +2,10 @@
 # hmm many things are happening here yes
 
 echo $$ > /var/run/myscript.pid
-trap 'echo "I hate the kill command"' SIGTERM
+trap 'echo "I hate the kill command";rm -f /var/run/myscript.pid; exit 0' SIGTERM
 trap 'echo "Y U no love me?!"' SIGINT
 while true
 do
 	echo 'To infinity and beyond'
 done
 trap SIGQUIT SIGTERM
-while true 
-do 
-	rm -r /var/run/myscript.pid
-done

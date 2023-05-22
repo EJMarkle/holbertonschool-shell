@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Show PID witout ps?? Is that legal??
+
+$$ | grep bash

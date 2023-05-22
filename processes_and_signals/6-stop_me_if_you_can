@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # stop w/o kill!!!
 
-pcs="4-to_infinity_and_beyond
+pcs="4-to_infinity_and_beyond"
 pid="$(pgrep "pcs")
 
 if [ -n "$pid" ]

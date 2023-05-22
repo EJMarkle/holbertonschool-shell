@@ -4,7 +4,4 @@
 pcs="4-to_infinity_and_beyond"
 pid="$(pgrep "$pcs")"
 
-if [ -n "$pid" ]
-then
-	pkill "$pid"
-fi
+pkill "$pid"

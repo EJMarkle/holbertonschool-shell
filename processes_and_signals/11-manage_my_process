@@ -1,4 +1,46 @@
 #!/usr/bin/env bash
 # manage manage my process
 
+pid="/var/run/my_process.pid"
+start() {
+    if [ -f "$pid" ]; then
+        echo "manage_my_process is already running."
+    else
+        ./manage_my_process &
+        echo $! > "$pid"
+        echo "manage_my_process started."
+    fi
+}
+
+stop() {
+    if [ -f "$pid" ]; then
+        pid=$(cat "$pid")
+        kill "$pid"
+        rm "$pid"
+        echo "manage_my_process stopped."
+    else
+        echo "manage_my_process is not running."
+    fi
+}
+
+restart() {
+    stop
+    start
+    echo "manage_my_process restarted."
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    restart)
+        restart
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart}"
+        ;;
+esac
 

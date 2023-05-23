@@ -3,17 +3,17 @@
 
 PID_FILE="/var/run/my_process.pid"
 
-start() {
+start_process() {
     if [ -f "$PID_FILE" ]; then
         echo "manage_my_process is already running."
     else
-        ./manage_my_process &
+        manage_my_process &
         echo $! > "$PID_FILE"
         echo "manage_my_process started."
     fi
 }
 
-stop() {
+stop_process() {
     if [ -f "$PID_FILE" ]; then
         pid=$(cat "$PID_FILE")
         kill "$pid"
@@ -24,23 +24,24 @@ stop() {
     fi
 }
 
-restart() {
-    stop
-    start
+restart_process() {
+    stop_process
+    start_process
     echo "manage_my_process restarted."
 }
 
 case "$1" in
     start)
-        start
+        start_process
         ;;
     stop)
-        stop
+        stop_process
         ;;
     restart)
-        restart
+        restart_process
         ;;
     *)
         echo "Usage: $0 {start|stop|restart}"
+        exit 1
         ;;
 esac

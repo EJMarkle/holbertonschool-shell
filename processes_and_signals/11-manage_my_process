@@ -4,11 +4,11 @@
 pid="/var/run/my_process.pid"
 start() {
     if [ -f "$pid" ]; then
-        echo "manage_my_process is already running."
+        echo "manage_my_process is already running"
     else
         ./manage_my_process &
         echo $! > "$pid"
-        echo "manage_my_process started."
+        echo "manage_my_process started"
     fi
 }
 
@@ -17,16 +17,16 @@ stop() {
         pid=$(cat "$pid")
         kill "$pid"
         rm "$pid"
-        echo "manage_my_process stopped."
+        echo "manage_my_process stopped"
     else
-        echo "manage_my_process is not running."
+        echo "manage_my_process is not running"
     fi
 }
 
 restart() {
     stop
     start
-    echo "manage_my_process restarted."
+    echo "manage_my_process restarted"
 }
 
 case "$1" in
@@ -43,4 +43,3 @@ case "$1" in
         echo "Usage: $0 {start|stop|restart}"
         ;;
 esac
-
